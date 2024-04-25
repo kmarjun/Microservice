@@ -6,8 +6,7 @@ pipeline {
             steps {
                 script {
                     dir('src') {
-
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                        withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
                         sh "docker build -t aju2020/cartservice:latest ."
                     }
                         }
