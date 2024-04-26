@@ -15,6 +15,7 @@ pipeline {
             steps {
                  withKubeConfig(caCertificate: '', clusterName: 'shopping', contextName: '', credentialsId: 'k8-token', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://139.185.54.24:6443') {
                     sh "kubectl get svc -n webapps"
+                    sh "kubectl get all -n webapps"
                 }
             }
         }
